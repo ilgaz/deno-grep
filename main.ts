@@ -12,9 +12,9 @@ const { searchTerm, filename } = await parseArguments(parsedArgs);
 
 let data = await readFromFile(filename)
   .catch(err => {
-		console.error(err.toString());
-		Deno.exit();
-	});
+    console.error(err.toString());
+    Deno.exit();
+  });
 
 const searchResult = findByKeyword(data.split('\n'), searchTerm, parsedArgs);
 
